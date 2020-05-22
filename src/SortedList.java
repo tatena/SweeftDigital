@@ -99,7 +99,8 @@ public class SortedList implements List {
                 curr = curr.right;
             } else if (curr.right == null) {  // case LEFT_ONlY -> replace with right child
                 curr = curr.left;
-            } else {                          // case BOTH -> replace with minimum node of right subtree
+            } else {
+                size++;  // case BOTH -> replace with minimum node of right subtree
                 int newValue = getMin(curr.right);
                 curr.value = newValue;
                 curr.right = recRemove(curr.right, newValue);
